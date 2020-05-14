@@ -53,10 +53,9 @@ public class HeftStepsActivity extends AppCompatActivity {
                     weight.setText("");
                     steps.setText("");
                 } catch (Exception exc) {
-                    Log.e(TAG, "Получено исключение", exc);
-                    Toast e = Toast.makeText(HeftStepsActivity.this,
-                            "Не корректно заполнена форма", Toast.LENGTH_LONG);
-                    e.show();
+                    Log.e(TAG, getString(R.string.exception), exc);
+                    Toast.makeText(HeftStepsActivity.this,
+                            R.string.error_form, Toast.LENGTH_LONG).show();
                 }
             }
         });

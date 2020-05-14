@@ -44,20 +44,16 @@ public class MainActivity extends AppCompatActivity {
                             feature.getText().toString(),
                             agePatient
                     );
-                    Log.i(TAG, "Создан объект класса Patient");
+                    Log.i(TAG, getString(R.string.new_obj));
                     Intent intentMenu = new Intent(MainActivity.this,
                             MenuActivity.class);
                     intentMenu.putExtra("patient", patient);
                     startActivity(intentMenu);
-                    surname.setText("");
-                    name.setText("");
-                    feature.setText("");
-                    age.setText("");
+                    finish();
                 } catch (Exception exc) {
-                    Log.e(TAG, "Получено исключение", exc);
-                    Toast e = Toast.makeText(MainActivity.this,
-                            "Не корректно заполнена форма", Toast.LENGTH_LONG);
-                    e.show();
+                    Log.e(TAG, getString(R.string.exception), exc);
+                    Toast.makeText(MainActivity.this,
+                            R.string.error_form, Toast.LENGTH_LONG).show();
                 }
             }
         });

@@ -13,6 +13,7 @@
     <string name="weight">Вес</string>
     <string name="steps">Количество шагов</string>
     <string name="patientInfo">Пациент: %s %s %s, Возраст: %d лет</string>
+    <string name="patientInfoNodName">Пациент: %s, Возраст: %d лет</string>
     <string name="viewHeft">%s: Вес: %d кг, Кол-во шагов: %d</string>
     <string name="empty">Запись отсутствует</string>
     <string name="text_title_pressure">Запись артериального давления</string>
@@ -23,4 +24,10 @@
     <string name="viewPressure">%s: Давление: %d на %d, Пульс: %d уд/мин, Тахикардия: %s</string>
     <string name="yes">да</string>
     <string name="no">нет</string>
+    <string name="exception">Получено исключение</string>
+    <string name="error_form">Не корректно заполнена форма</string>
+    <string name="new_obj">Создан объект класса Patient</string>
+    <string name="move_save_pressure">Переход на запись давления</string>
+    <string name="move_save_heft">Переход на запись веса и шагов</string>
+    <string name="unknown">ФИО отсутствует</string>
 </resources>

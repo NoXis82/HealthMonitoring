@@ -24,11 +24,21 @@ public class MenuActivity extends AppCompatActivity {
     public void  outInfoPatient() {
         Patient patient = getIntent().getParcelableExtra("patient");
         TextView patientInfo = findViewById(R.id.patientInfo);
-        patientInfo.setText(String.format(getString(R.string.patientInfo),
-                patient.getSurname(),
-                patient.getName(),
-                patient.getFeature(),
-                patient.getAge()));
+
+        if(patient.getSurname().equals("")
+        && patient.getName().equals("")
+        && patient.getFeature().equals("")) {
+
+            patientInfo.setText(String.format(getString(R.string.patientInfoNodName),
+                    getString(R.string.unknown),
+                    patient.getAge()));
+        } else {
+            patientInfo.setText(String.format(getString(R.string.patientInfo),
+                    patient.getSurname(),
+                    patient.getName(),
+                    patient.getFeature(),
+                    patient.getAge()));
+        }
     }
 
     public void goPressure() {
@@ -36,7 +46,7 @@ public class MenuActivity extends AppCompatActivity {
         goPressure.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(TAG, "Переход на запись давления");
+                Log.i(TAG, getString(R.string.move_save_pressure));
                 Intent intentPressure = new Intent(MenuActivity.this,
                         PressureActivity.class);
                 startActivity(intentPressure);
@@ -49,7 +59,7 @@ public class MenuActivity extends AppCompatActivity {
         goHeftSteps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(TAG, "Переход на запись веса и шагов");
+                Log.i(TAG, getString(R.string.move_save_heft));
                 Intent intentHeftSteps = new Intent(MenuActivity.this,
                         HeftStepsActivity.class);
                 startActivity(intentHeftSteps);

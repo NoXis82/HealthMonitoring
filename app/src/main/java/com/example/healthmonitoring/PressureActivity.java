@@ -59,11 +59,7 @@ public class PressureActivity extends AppCompatActivity {
                                 @Override
                                 public void onCheckedChanged(CompoundButton buttonView,
                                                              boolean isChecked) {
-                                    if (isChecked) {
-                                        tachycardiaSave = true;
-                                    } else {
-                                        tachycardiaSave = false;
-                                    }
+                                    tachycardiaSave = isChecked;
                                 }
                             });
                     Pressure pressureSave = new Pressure(upPressureSave,
@@ -78,10 +74,10 @@ public class PressureActivity extends AppCompatActivity {
                     pulse.setText("");
                     tachycardia.setChecked(false);
                 } catch (Exception exc) {
-                    Log.e(TAG, "Получено исключение", exc);
-                    Toast e = Toast.makeText(PressureActivity.this,
-                            "Не корректно заполнена форма", Toast.LENGTH_LONG);
-                    e.show();
+                    Log.e(TAG, getString(R.string.exception), exc);
+                    Toast.makeText(PressureActivity.this,
+                            R.string.error_form, Toast.LENGTH_LONG).show();
+
                 }
 
             }
